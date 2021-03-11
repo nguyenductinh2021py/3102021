@@ -20,12 +20,13 @@ from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 router = DefaultRouter()
 router.register('product', ProductViewSet, basename='Product')
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include(router.urls)),
+    path('authen/', include('authen.urls'))
 ]
 
 if settings.DEBUG:

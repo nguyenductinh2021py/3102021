@@ -3,6 +3,7 @@ from rest_framework import serializers
 from versatileimagefield.serializers import VersatileImageFieldSerializer
 from .models import Image
 from rest_flex_fields import FlexFieldsModelSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 
 class ImageSerializer(FlexFieldsModelSerializer):
     image = VersatileImageFieldSerializer(sizes=[('full_size', 'url'), ('thumbnail', 'thumbnail_100x100'),])
